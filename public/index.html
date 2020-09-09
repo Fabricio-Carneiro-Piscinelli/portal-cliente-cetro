@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" /> -->
+    <link rel="icon" href="icon-cetro.png" sizes="192x192">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+
+    <!-- <link rel="apple-touch-icon" href="logo192.png" /> -->
+    <link rel="icon" href="icon-cetro.png" sizes="192x192">
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
+    
+    
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v5.0&appId=806111586515460&autoLogAppEvents=1"></script>
+    <title>Portal Cetro</title>
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0
+      }
+    
+      input[type='file'] {
+        display: none
+      }
+      #no-root  {
+        display: none;
+      }
+
+      @media only screen and (max-width: 800px) {
+        #root  {
+          display: none;
+        }
+        #no-root  {
+          display:block;
+          text-align: center;
+          margin-top: 50px;
+          color: black;padding: 20px
+        }
+      }
+
+      #dispositivo-movel {
+          display:block;
+          text-align: center;
+          margin-top: 50px;
+          color: black;padding: 20px
+      }
+      
+      input[type="text"][disabled] {
+        color: black;
+        outline: none !important;
+        border: none !important;
+      }
+      input[type='radio'] {
+        cursor: 'pointer'
+      }
+      input[type='radio']:after {
+        width: 18px;
+        height: 18px;
+        border-radius: 18px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    input[type='radio']:checked:after {
+        width: 18px;
+        height: 18px;
+        border-radius: 18px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #39b54a;
+        content: '\2022';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: white
+    }
+
+
+    ::-webkit-scrollbar {
+      background-color: rgb(189, 186, 186);
+      height: 6px;
+      width: 6px;
+    }
+    ::-webkit-scrollbar-button       { 
+      width: 5px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track        { 
+      /* background-color: transparent; */
+      
+    }
+    ::-webkit-scrollbar-track-piece  { 
+      /* background-color: transparent; */
+      
+     }
+    ::-webkit-scrollbar-thumb        { 
+      background-color: #402259;
+    }
+    ::-webkit-scrollbar-corner       { 
+      /* background-color: transparent; */
+    }
+    ::-webkit-resizer{ 
+      /* height: 5px; */
+      /* background-color: transparent; */
+    }
+
+  
+    </style>
+  </head>
+  <body>
+    <script>
+
+      window.onload = function() {
+          if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.getElementById('no-root').innerHTML = ``;
+            document.getElementById('dispositivo-movel').innerHTML = `"Ainda não disponível para dispositivos mobile, por gentileza acessar a partir de um computador"`;
+          }else {
+            document.getElementById('no-root').innerHTML = `"Por gentileza diminua o zoom de seu navegador, quaisquer dúvidas entre em contato com o departamento de TI Cetro Máquinas."`;
+            document.getElementById('dispositivo-movel').innerHTML = "";
+          }
+      }
+    </script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="root"></div>
+    <div id="no-root">
+     
+    </div>
+    <div id="dispositivo-movel" >
+    </div>
+  </body>
+</html>
